@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_MateriaPrima" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e61cd3d4-cb25-42b1-9b9d-a461c6fa2acd">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo_solid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from materia_p]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localEstoque" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroLote" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estoqueAtual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estoqueMinimo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precoUnidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imagem" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricaoMateriaPrima" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="278" height="64" uuid="e7d0eff3-9296-4eb6-94f9-05f3b0abad54"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Kalinga" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Materia Prima]]></text>
+			</staticText>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement x="278" y="0" width="277" height="64" uuid="ebc51825-ff24-4f38-abba-7772c83fbf9e"/>
+				<imageExpression><![CDATA[$P{logo_solid}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="20" width="231" height="24" forecolor="#999999" uuid="94644751-069e-48f8-80cc-c58c2775867a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dados da Materia Prima Prima]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="154" splitType="Stretch">
+			<staticText>
+				<reportElement x="278" y="37" width="77" height="20" uuid="3db80c57-be92-4adf-a12f-bc5a0f4b0d0b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº do Lote :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="55" width="108" height="20" uuid="b03ba7d2-2877-4585-bae6-1cc7ca7c1105"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estoque Minimo :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="115" width="42" height="20" uuid="339dccc7-8f6f-4b39-b73a-df859fd03333"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preço :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="17" width="50" height="20" uuid="bdaac7d4-f2aa-43bb-994a-6407b6cf223f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="17" width="66" height="20" uuid="be3f8c05-6fdf-4926-945f-bcd8438df425"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidade :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="37" width="50" height="20" uuid="d4c39337-569e-4701-98a8-dc7793f99131"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="55" width="113" height="20" uuid="a1531c0e-db9c-4dd7-a9c2-08f63af6491f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Local do Estoque :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="75" width="50" height="20" uuid="6ee9c316-59e0-4d39-ba31-ddde1b926b94"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="17" width="77" height="20" uuid="ad0468e0-c43e-4316-a19c-a65d2a256dab"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="37" width="50" height="20" uuid="5c537bdd-32ed-4aac-a4e2-b49eebffcb10"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="55" width="81" height="20" uuid="6edc2d55-56de-48f6-93be-06850585afd0"/>
+				<textFieldExpression><![CDATA[$F{localEstoque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="75" width="50" height="20" uuid="04d1be80-f6c5-4179-9fda-6aaede4e4000"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="17" width="76" height="20" uuid="8223dffb-4d86-41d9-9dab-3a69243b7a67"/>
+				<textFieldExpression><![CDATA[$F{unidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="37" width="92" height="20" uuid="a8062695-f44c-4775-a8c1-c1bedbeaf622"/>
+				<textFieldExpression><![CDATA[$F{numeroLote}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="75" width="84" height="20" uuid="6b8f1a9b-30c0-4315-8105-e39c704c14c1"/>
+				<textFieldExpression><![CDATA[$F{estoqueAtual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="55" width="92" height="20" uuid="5a4ed856-d413-4938-a60d-910513ae000d"/>
+				<textFieldExpression><![CDATA[$F{estoqueMinimo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="115" width="88" height="20" uuid="4e8657d2-913f-4820-9b8f-5b7bf100e6d2"/>
+				<textFieldExpression><![CDATA[$F{precoUnidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="95" width="146" height="20" uuid="1c55a633-6e25-4106-8c86-ac1748ccb487"/>
+				<textFieldExpression><![CDATA[$F{descricaoMateriaPrima}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="95" width="175" height="20" uuid="807ca831-0c93-4120-80eb-b00d6e5e3375"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição da Matéria Prima :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="75" width="97" height="20" uuid="ac1f2bc5-efcf-42b0-aedc-2d87966a9d6b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estoque Atual :]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="94" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="80" width="40" height="14" backcolor="#E6E6E6" uuid="5920da66-eb3c-45b5-ad57-0e8154507dc3"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="80" width="515" height="14" backcolor="#E6E6E6" uuid="f016998a-d719-4548-9c4c-7e0464c656f4"/>
+				<textElement textAlignment="Right">
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="80" width="126" height="14" uuid="2bb29634-e7e6-489e-bca5-fad77c1e7d4d"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="80" width="114" height="14" forecolor="#000000" uuid="484f6801-ec25-40d9-9a56-e754fa722637"/>
+				<textElement textAlignment="Center">
+					<font fontName="Kalinga" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLID - Sistemas de Gestão]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

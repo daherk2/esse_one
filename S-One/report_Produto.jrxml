@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Produto" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e61cd3d4-cb25-42b1-9b9d-a461c6fa2acd">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo_solid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from produtos]]>
+	</queryString>
+	<field name="codigoProduto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localEstoque" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataCompra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="validade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroLote" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estoqueAtual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estoqueMinimo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imagem" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricaoProduto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fichaTecnica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precoCusto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ipi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="iss" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cofins" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="icms" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="margemLucro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precoVenda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="278" height="64" uuid="e7d0eff3-9296-4eb6-94f9-05f3b0abad54"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Kalinga" size="18"/>
+				</textElement>
+				<text><![CDATA[Relatório de Produtos]]></text>
+			</staticText>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement x="278" y="0" width="277" height="64" uuid="ebc51825-ff24-4f38-abba-7772c83fbf9e"/>
+				<imageExpression><![CDATA[$P{logo_solid}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="44" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="168" splitType="Stretch">
+			<staticText>
+				<reportElement x="278" y="57" width="81" height="20" uuid="3db80c57-be92-4adf-a12f-bc5a0f4b0d0b"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Cadastro :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="76" width="53" height="20" uuid="b03ba7d2-2877-4585-bae6-1cc7ca7c1105"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Validade :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="96" width="98" height="20" uuid="339dccc7-8f6f-4b39-b73a-df859fd03333"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Local do Estoque :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="37" width="50" height="20" uuid="bdaac7d4-f2aa-43bb-994a-6407b6cf223f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="37" width="53" height="20" uuid="be3f8c05-6fdf-4926-945f-bcd8438df425"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidade :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="57" width="50" height="20" uuid="d4c39337-569e-4701-98a8-dc7793f99131"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="75" width="67" height="20" uuid="a1531c0e-db9c-4dd7-a9c2-08f63af6491f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº do Lote :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="95" width="31" height="20" uuid="6ee9c316-59e0-4d39-ba31-ddde1b926b94"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="0" width="162" height="24" forecolor="#999999" uuid="94644751-069e-48f8-80cc-c58c2775867a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dados do Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="115" width="67" height="20" uuid="5f7fff35-ca10-4a1e-8671-9c48f81b0863"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="116" width="98" height="20" uuid="521fc8c0-8449-4b21-9ccf-6bf199a63ecb"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estoque Minimo :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="63" y="37" width="91" height="20" uuid="279bbd7e-d315-4e00-9d93-85751b80a5ba"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoProduto}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="63" y="55" width="61" height="20" uuid="326bf5dd-4d33-4975-82ba-bb05910d8a32"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="376" y="96" width="81" height="20" uuid="02064756-3a48-47b7-84a6-8dbe6465a1bc"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{localEstoque}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="44" y="96" width="61" height="20" uuid="99ffd6a8-da99-4d90-a442-10ef352d2b80"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="331" y="37" width="61" height="20" uuid="69e42f4d-c296-4f60-9635-5709cdc75448"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unidade}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="359" y="57" width="79" height="20" uuid="de08d73a-7670-4887-8dfd-6fdf62256371"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataCompra}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="331" y="75" width="61" height="20" uuid="11f7b1c5-e1a8-448c-8d8f-b241b7704d52"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{validade}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="82" y="76" width="85" height="20" uuid="558fa2ea-7a29-447c-808a-9bca1235d430"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroLote}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="376" y="115" width="101" height="20" uuid="45b07f37-f464-4acd-b2f2-7d7c328aaf41"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estoqueMinimo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="80" y="116" width="100" height="20" uuid="dda669bd-792e-427f-98ed-96adfa5781cf"/>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricaoProduto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="94" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="80" width="40" height="14" backcolor="#E6E6E6" uuid="5920da66-eb3c-45b5-ad57-0e8154507dc3"/>
+				<textElement>
+					<font fontName="Kalinga" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="80" width="515" height="14" backcolor="#E6E6E6" uuid="f016998a-d719-4548-9c4c-7e0464c656f4"/>
+				<textElement textAlignment="Right">
+					<font fontName="Kalinga" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="80" width="126" height="14" uuid="2bb29634-e7e6-489e-bca5-fad77c1e7d4d"/>
+				<textElement>
+					<font fontName="Kalinga" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="216" y="80" width="123" height="14" forecolor="#000000" uuid="484f6801-ec25-40d9-9a56-e754fa722637"/>
+				<textElement textAlignment="Center">
+					<font fontName="Kalinga" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[SOLID - Sistemas de Gestão]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

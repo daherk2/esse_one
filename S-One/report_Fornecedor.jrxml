@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Fornecedor" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e61cd3d4-cb25-42b1-9b9d-a461c6fa2acd">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo_solid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from fornecedor]]>
+	</queryString>
+	<field name="codigoFornecedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vendedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="complemento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="celular1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="celular2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnpj" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inscricaoEstadual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imagem" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="64" uuid="e7d0eff3-9296-4eb6-94f9-05f3b0abad54"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Kalinga" size="18"/>
+				</textElement>
+				<text><![CDATA[Relatório de Fornecedor]]></text>
+			</staticText>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement x="280" y="0" width="275" height="64" uuid="ebc51825-ff24-4f38-abba-7772c83fbf9e"/>
+				<imageExpression><![CDATA[$P{logo_solid}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="20" width="184" height="24" forecolor="#666666" uuid="94644751-069e-48f8-80cc-c58c2775867a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dados do Registro]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="274" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="14" width="50" height="20" uuid="bdaac7d4-f2aa-43bb-994a-6407b6cf223f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="189" width="49" height="20" uuid="cd79e964-b602-4363-8347-cedee18b313f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CNPJ :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="149" width="62" height="20" uuid="5cf4a2f3-0573-4eb6-981d-e0e58d6f2e5c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone 1 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="169" width="61" height="20" uuid="040d6350-189b-4d1d-bc5e-4fb22a055e66"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone 2 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="149" width="49" height="20" uuid="41367bc4-bf70-4dc2-a1a7-2a166fb19c9e"/>
+				<textElement textAlignment="Justified">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Celular 1 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="169" width="50" height="20" uuid="cdcd118e-9386-462b-bb58-01326fce24ee"/>
+				<textElement textAlignment="Justified">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Celular 2 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="149" width="28" height="20" uuid="ea3be4c9-c90f-48ce-a647-28a2eaedd053"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rua :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="169" width="34" height="20" uuid="956d41a0-a711-4242-86ae-5996534f6e42"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="169" width="17" height="20" uuid="0e8490fd-131a-4e15-aa40-42c8eb7c0ad7"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="209" width="32" height="20" uuid="4f6b863b-3084-4b7c-80f0-867b5706d239"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEP :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="189" width="50" height="20" uuid="d3855e0b-7d39-4488-86ea-357394071f48"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cidade :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="189" width="41" height="20" uuid="dc7b87bb-71c5-4b6f-82d6-7e2993cc6e1c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="34" width="50" height="20" uuid="d4c39337-569e-4701-98a8-dc7793f99131"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="52" width="66" height="20" uuid="a1531c0e-db9c-4dd7-a9c2-08f63af6491f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vendedor :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="229" width="75" height="20" uuid="01c792f9-5d49-46a2-8f99-3dee1be1189d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Complemento :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="122" width="162" height="20" forecolor="#666666" uuid="c7425107-7812-42e9-a4f3-b5f5809bcf4e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="122" width="162" height="20" forecolor="#666666" uuid="0e7fb053-4991-44bf-ac05-e377890e4eb2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contato]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="14" width="105" height="20" uuid="b1ab9f68-16e5-4eb0-9cc2-0a9c45e1daa4"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoFornecedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="34" width="52" height="20" uuid="1cf84847-5dc3-44c5-8379-06bcab05956b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="52" width="81" height="20" uuid="620f4d79-6584-4a85-86cd-a660839522c9"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vendedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="149" width="66" height="20" uuid="1b71c5fa-f61c-493c-b82c-c6b3c7a32e73"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="169" width="62" height="20" uuid="3398886a-c38a-4707-b9bb-011199c74ca3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="229" width="94" height="20" uuid="24e84e11-bc4f-4f19-90a5-3c2834d50ed5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{complemento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="169" width="51" height="20" uuid="d9e5a24e-f74e-4206-9129-6fb2ab1fd94d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="189" width="53" height="20" uuid="1773305f-32ba-4fe2-b32b-bd03e8352a36"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="189" width="69" height="20" uuid="b93d14b1-cc93-4645-9641-037c4041b397"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="209" width="41" height="20" uuid="5b2a5737-f77c-4de5-a7c5-4650fe77fa73"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="149" width="70" height="20" uuid="f17b8566-8e28-4b63-ade6-854fde2dab2d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="169" width="65" height="20" uuid="212e465a-2fb5-4dc1-8f8f-874389a62cb8"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="149" width="61" height="20" uuid="6b89e686-12b7-4fcc-920f-1bfb1c010c6b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{celular1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="169" width="63" height="20" uuid="c66571a6-4431-423d-8084-7c4febb73558"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{celular2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="189" width="50" height="20" uuid="6c0cf110-cfe4-4eb8-bd53-c24afab7b134"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cnpj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="209" width="110" height="20" uuid="a31a519b-d958-4e2f-8d0c-45db07c9a4ec"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inscricaoEstadual}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="209" width="99" height="20" uuid="6032f3cf-a051-49f9-9f4b-943ad5a86bd9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inscrição Estadual :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="85" width="555" height="24" uuid="14b64199-07a9-436a-bb6a-319188179da6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[----------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="94" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="80" width="40" height="14" backcolor="#E6E6E6" uuid="5920da66-eb3c-45b5-ad57-0e8154507dc3"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="80" width="515" height="14" backcolor="#E6E6E6" uuid="f016998a-d719-4548-9c4c-7e0464c656f4"/>
+				<textElement textAlignment="Right">
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="80" width="126" height="14" uuid="2bb29634-e7e6-489e-bca5-fad77c1e7d4d"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="221" y="80" width="113" height="14" forecolor="#000000" uuid="484f6801-ec25-40d9-9a56-e754fa722637"/>
+				<textElement textAlignment="Center">
+					<font fontName="Kalinga" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLID - Sistemas de Gestão]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_Veiculo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e9bdf138-2d02-48f4-bb55-bfcf9966f092">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo_solid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from veiculos]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="modelo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroChassi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroDocumento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anoFabricacao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="licenciamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="combustivel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="categoria" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="marca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kilometragem" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="especie" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ipva" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="seguroObrigatorio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aquisicao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imagem" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="283" height="62" uuid="e46d6021-3132-442a-920f-4a21e5c33ce1"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Kalinga" size="18"/>
+				</textElement>
+				<text><![CDATA[Relatório de Veículos]]></text>
+			</staticText>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement isPrintRepeatedValues="false" x="283" y="0" width="272" height="62" uuid="ed4b063e-f3e5-473a-a4fb-82cbb48f05c4"/>
+				<imageExpression><![CDATA[$P{logo_solid}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="37" width="216" height="24" forecolor="#999999" uuid="824e372a-d43f-423b-a510-ff7939d6b573"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dados do Veículo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="193" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="283" y="50" width="79" height="20" uuid="604ccb84-5f0f-44ea-a432-ecde43f2fbf4"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="30" width="79" height="20" uuid="2cfdaeb3-7e0e-47b3-9435-74396571e9b9"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="88" y="150" width="90" height="20" uuid="31d4e478-3384-4f71-a28a-1cadd6bbb9b1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{licenciamento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="84" y="170" width="65" height="20" uuid="03ae4001-4e7c-4f4d-bbef-aaad301e295d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aquisicao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="30" width="50" height="20" uuid="6635e400-98ec-4258-83e8-53f0d28b81d2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Modelo :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="268" y="90" width="79" height="20" uuid="75257636-0b5e-40dc-9c7e-1a473be13c23"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cor}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="322" y="70" width="79" height="20" uuid="e751d595-e1c8-409f-a0ad-d75384a97734"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kilometragem}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="88" y="130" width="90" height="20" uuid="93a48864-f517-49e0-a520-dbdc8592da6a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anoFabricacao}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="311" y="150" width="104" height="20" uuid="4d682cda-5d7a-4d4a-9200-e10b0e18a2c3"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{seguroObrigatorio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="73" y="70" width="79" height="20" uuid="55dde2cc-e341-4245-898d-d269b119aa4e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroDocumento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="243" y="10" width="68" height="20" uuid="40e0817c-92f6-40e2-ad2f-bf99db36185a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Combustível :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="110" width="50" height="20" uuid="6f3bfdc8-576a-4ee7-bf2d-de7c2432b8be"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Espécie :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="274" y="130" width="79" height="20" uuid="333c36c2-b58d-4f3a-b24e-7962b4acfc01"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ipva}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="170" width="80" height="20" uuid="c238027c-de9e-40a2-86a1-775cd60f967f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Data Aquisição :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="110" width="36" height="20" uuid="25008561-36f4-41f3-a581-292e879f5480"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Placa :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="30" y="90" width="43" height="20" uuid="473fd9ce-22ca-4886-b814-3dc38d05e104"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="10" width="50" height="20" uuid="f11111c9-d62a-43b3-a10a-894e67b02931"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Código :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="90" width="26" height="20" uuid="9d88aa38-702a-45b2-9220-78d35e701ffb"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tipo :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="70" width="69" height="20" uuid="60f55ae3-0167-4600-aab3-bfc8e171426f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Documento :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="150" width="84" height="20" uuid="6409856d-667c-452c-a356-7d05720be9ca"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Licenciamento :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="90" width="25" height="20" uuid="5ac1e98c-f5c6-4274-8974-60c615a61ab4"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cor :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="50" width="95" height="20" uuid="a5a2c475-7aa5-4411-b4b2-f394c4bf98bb"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroChassi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="311" y="10" width="79" height="20" uuid="a16d8f7e-630f-4809-bdc5-37fba5068f5a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{combustivel}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="10" width="79" height="20" uuid="10bfb3c8-bad1-4cb1-8606-2ec67c100169"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="243" y="50" width="40" height="20" uuid="aad8722c-9bb1-4aaa-94b0-86b95d0c940d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Marca :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="130" width="31" height="20" uuid="79173102-5458-41e2-adce-494ecebfa974"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[IPVA :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="30" width="50" height="20" uuid="c906ab42-fdb0-4566-8955-f3a8d54cdb6a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Categoria :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="40" y="110" width="48" height="20" uuid="96c828f5-e5dc-4c92-af1c-9fb4851ff881"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="293" y="110" width="79" height="20" uuid="fdde24d7-c70b-4d1c-81df-3e1444afaf01"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{especie}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="243" y="70" width="79" height="20" uuid="8c16612a-680f-4d46-98b5-6e1a82fe6883"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Kilometragem :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="130" width="84" height="20" uuid="91e74d50-7f52-46ad-9b54-e27bea3a6129"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Ano Fabricação :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="293" y="30" width="79" height="20" uuid="5f04712f-a0a4-4169-9d58-86f0b72a2402"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="50" width="50" height="20" uuid="549bfa83-1322-47fd-a285-dc1c3a3a583b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nº Chassi :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="150" width="68" height="20" uuid="3038d394-5f72-4968-8b39-10452a4c55dd"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Kalinga" size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nº Seguro :]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="103" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="89" width="40" height="14" backcolor="#E6E6E6" uuid="379c74c4-1067-4dbe-af84-2337f187947c"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="89" width="515" height="14" backcolor="#E6E6E6" uuid="571ea3e0-53da-4fee-99f6-a2ecff646118"/>
+				<textElement textAlignment="Right">
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="89" width="126" height="14" uuid="bbbc5da9-afa7-4107-a654-743aa215ddb8"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="214" y="89" width="127" height="14" forecolor="#000000" uuid="3ebf3740-7ee2-4ee1-ac7a-af7c66d89c88"/>
+				<textElement textAlignment="Center">
+					<font fontName="Kalinga" size="8" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[SOLID - Sistemas de Gestão]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

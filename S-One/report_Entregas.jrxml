@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Entregas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e61cd3d4-cb25-42b1-9b9d-a461c6fa2acd">
+	<property name="ireport.zoom" value="1.2100000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo_solid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from delivery]]>
+	</queryString>
+	<field name="contador" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroVenda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="287" height="60" forecolor="#000000" uuid="e7d0eff3-9296-4eb6-94f9-05f3b0abad54"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Kalinga" size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Relatório de Entregas Delivery]]></text>
+			</staticText>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement x="287" y="0" width="268" height="60" uuid="b8f8844c-2afb-486e-8ce8-ca9b9681a484"/>
+				<imageExpression><![CDATA[$P{logo_solid}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="254" y="0" width="95" height="25" forecolor="#000000" backcolor="#E6E6E6" uuid="bf78f457-6343-4f0b-a908-8889debd1a93"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="349" y="0" width="81" height="25" forecolor="#000000" backcolor="#E6E6E6" uuid="33a6d92a-9018-4472-a303-656598b127eb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="92" height="25" forecolor="#000000" backcolor="#E6E6E6" uuid="965f615a-e47a-4398-a55f-c4f03cb331f8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="430" y="0" width="125" height="25" forecolor="#000000" backcolor="#E6E6E6" uuid="d7c20e4d-4e6d-4825-bae1-c0802f28b8be"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="92" y="0" width="81" height="25" forecolor="#000000" backcolor="#E6E6E6" uuid="b265e434-0718-4373-835a-d55bcf495772"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="173" y="0" width="81" height="25" forecolor="#000000" backcolor="#E6E6E6" uuid="2f445f51-0ecd-4d6f-98a1-aae683879f9d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kalinga" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="157" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="254" y="0" width="95" height="20" uuid="af116f22-6820-418f-96b5-122e39ca9c1d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horario}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="129" height="20" uuid="4a6a113b-a1e6-4f32-8a71-acfe067e2188"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="173" y="0" width="81" height="20" uuid="6e4f2385-34da-4ce9-a154-6a06126a8db0"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="92" y="0" width="81" height="20" uuid="9d8acea0-d00b-4628-a20c-51b99789d86a"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="349" y="0" width="81" height="20" uuid="2c79009e-1aa5-4f53-af07-e403893c2737"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="0" width="125" height="20" uuid="fcf0dd77-1b1d-41e8-a8f9-47314513c376"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{status} ? "Aberto" : "Fechado" )]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="36" width="40" height="14" backcolor="#E6E6E6" uuid="82c84e69-085a-42b5-b08c-9b41f1e60838"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="36" width="515" height="14" backcolor="#E6E6E6" uuid="be8775a3-dd4b-468e-97eb-e27f58fdebce"/>
+				<textElement textAlignment="Right">
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="36" width="92" height="14" uuid="3e72e4e2-2382-44b4-aa24-dd18117c8e0a"/>
+				<textElement>
+					<font fontName="Kalinga" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="216" y="36" width="123" height="14" forecolor="#000000" uuid="c9a65b55-9443-4b0f-86f2-9d75e1df409d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Kalinga" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLID - Sistemas de Gestão]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
