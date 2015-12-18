@@ -185,5 +185,8 @@
 	<classpathentry kind="lib" path="src/Jars/Outros/xulrunner-windows.jar"/>
 	<classpathentry kind="lib" path="src/Jars/Outros/xulrunner15-mac.jar"/>
 	<classpathentry kind="lib" path="src/Jars/Outros/xulrunner15-windows.jar"/>
+	<classpathentry kind="lib" path="src/Jars/Email/activation.jar"/>
+	<classpathentry kind="lib" path="src/Jars/Email/commons-email-1.2.jar"/>
+	<classpathentry kind="lib" path="src/Jars/Email/mail-1.4.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

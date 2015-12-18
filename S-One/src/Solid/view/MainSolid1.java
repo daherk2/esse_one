@@ -1,6 +1,5 @@
 package Solid.view;
 
-import java.io.File;
 import java.util.Properties;
 
 import javax.swing.UIManager;
