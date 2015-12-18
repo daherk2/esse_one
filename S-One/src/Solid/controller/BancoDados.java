@@ -16,7 +16,7 @@ public class BancoDados {
 	static Connection			con;									// conexão
 	static Statement			stmt;									// Gravar
 	static ResultSet			rs;										// Consulta
-	static String				url		= "jdbc:mysql://localhost:3306/erp";	// banco
+	static String				url		= "jdbc:mysql://localhost:3306/solid_one";	// banco
 																	// de
 																	// dados
 	static String				user		= "root";						// usuario
@@ -42,7 +42,7 @@ public class BancoDados {
 
 		try {
 			Class.forName(driver);
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/erp", "root", "");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/solid_one", "root", "f1234567");
 			stmt = con.createStatement();
 			System.out.printf("Conexão com o Banco de Dados estabelecida com sucesso!", "Mensagem do Sistema", JOptionPane.PLAIN_MESSAGE);
 

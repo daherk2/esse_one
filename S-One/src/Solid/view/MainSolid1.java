@@ -1,5 +1,6 @@
 package Solid.view;
 
+import java.io.File;
 import java.util.Properties;
 
 import javax.swing.UIManager;
@@ -12,7 +13,7 @@ public class MainSolid1 {
 	 * @author Luiz Gustavo Silvestre
 	 */
 	public static void main(String[] args) {
-
+		
 		try {
 			// here you can put the selected theme class name in JTattoo
 			Properties props = new Properties();
@@ -39,5 +40,17 @@ public class MainSolid1 {
 			java.util.logging.Logger.getLogger(MainSolid1.class.getName()).log(
 			            java.util.logging.Level.SEVERE, null, ex);
 		}
+		
+		/*
+		
+		File file = new File("conf/database.bin");
+		if(file.exists()){
+			System.out.println("Existe");
+		}else{
+			System.out.println("Não Existe");
+		}
+		
+		*/
+		
 	}
 }

@@ -27,6 +27,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -48,6 +49,7 @@ import Solid.controller.SuprimentosController;
 import Solid.controller.VendasController;
 
 import com.jtattoo.plaf.fast.FastLookAndFeel;
+
 
 
 
@@ -131,7 +133,7 @@ public class Menu extends JFrame {
 	public JLabel lblNewLabel;
 	private JMenuItem GerencPedidos;
 	public static Properties props;
-	private JMenuItem menuItem_2;
+	private JMenuItem mntmNewMenuItem;
 
 	public Menu() {
 		super();
@@ -224,19 +226,29 @@ public class Menu extends JFrame {
 		menuConfiguracao.add(menuDefinirPapelParede);
 		menuConfiguracao.add(menuAbrirBatePapo);
 		
-		menuItem_2 = new JMenuItem("Abrir Bate-Papo");
-		menuItem_2.addActionListener(new ActionListener() {
+		mntmNewMenuItem = new JMenuItem("Gerenciador de Configuração");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ListaCompra lista = new ListaCompra();
-				
-				lista.setVisible(true);
+			
+				JPasswordField pf = new JPasswordField();
+				String senha = null;
+				int okCxl = JOptionPane.showConfirmDialog(null, pf, "Insira a senha de Consultor : ", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+				if (okCxl == JOptionPane.OK_OPTION) {
+				  senha = new String(pf.getPassword());
+				  if(senha.equals("ontemeucomiarroz")){
+					  ConfiguraçãoSoftware cnso = new ConfiguraçãoSoftware();
+					  cnso.setVisible(true);
+					  dispose();
+				}
+				}
+			
+			
+			
 			}
 		});
-		menuItem_2.setFont(new Font("Dialog", Font.PLAIN, 14));
-		menuItem_2.setFocusable(true);
-		menuItem_2.setFocusTraversalPolicyProvider(true);
-		menuItem_2.setFocusPainted(true);
-		menuConfiguracao.add(menuItem_2);
+		mntmNewMenuItem.setIcon(new ImageIcon(Menu.class.getResource("/icones1_24px/1425606642_678122-cogs-128.png")));
+		mntmNewMenuItem.setFont(new Font("Kalinga", Font.PLAIN, 14));
+		menuConfiguracao.add(mntmNewMenuItem);
 
 		menuLogout = new JMenu("Logout");
 		menuLogout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
