@@ -7,8 +7,8 @@ public class MailSender{
 
 	public void enviar(String para, String nome, String titulo, String conteudo ) throws EmailException{
 
-		final String username = "sebastiaoqlz1234@bol.com.br"; 
-		final String password = "s1234567890";
+		final String username = "email"; 
+		final String password = "senha";
 
 		String texto = "";
 
