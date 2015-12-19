@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -89,12 +90,17 @@ public class LoginController {
 	public static void Esqueci(){
 		
 		String user = Login.cusuario.getText();
-				
+		Random rd = new Random();
+		String novasenha = "";		
+		String alfabeto[] = {"a","b","C","d","e","F","g","h","i","J","k","l","M","n","o","p","Q","r","s","T","1","2","3","4","5","6","7","8","9"}; 
+		for(int i=0; i<6; i++){
+			novasenha += alfabeto[rd.nextInt(alfabeto.length)];
+		}
 		BancoDados su = new BancoDados();
 		su.conecta();
-		String novasenha = "ontem";
+		
 		String sql = "Update login1 set senha = '"+novasenha+"' WHERE usuario = '"+user+"';";
-		System.out.println(sql);
+		//System.out.println(sql);
 		su.grava(sql);
 		//su.desconecta();
 		
@@ -116,11 +122,21 @@ public class LoginController {
 		ms.enviar(email, user, "Recuparação de Senha",
 				"<html><br>Prezado "+user+""+",</br>"+
 				"<br>Sua senha foi alterada para: "+novasenha+" .</br>"+
+				"<br>Não se esqueça de ALTERAR sua senha no PRÓXIMO USO.</br>"+
 				"<br> </br>"+
 				"<br>Atenciosamente</br>,<br> Equipe SOLID - Software and Consulting</br>"+
 				"</html>");
 		
-		
+		String corta[] = email.split("@");
+		String nickname = corta[0];
+		nickname = nickname.replace("a", "*");
+		nickname = nickname.replace("e", "*");
+		nickname = nickname.replace("i", "*");
+		nickname = nickname.replace("o", "*");
+		nickname = nickname.replace("u", "*");
+		nickname = nickname.replace("_", "*");
+		nickname = nickname.replace(".", "*");
+		JOptionPane.showMessageDialog(null, "Prezado "+user+",\n"+"Verifique seu email : "+nickname+"@"+corta[1]+".\n Enviamos uma nova senha para seu acesso.");
 		
 	}
 	

@@ -4,6 +4,8 @@ import java.util.Properties;
 
 import javax.swing.UIManager;
 
+import Solid.controller.LoginController;
+
 import com.jtattoo.plaf.fast.FastLookAndFeel;
 
 public class MainSolid1 {
@@ -20,8 +22,9 @@ public class MainSolid1 {
 			FastLookAndFeel.setCurrentTheme(props);
 			UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
 			// inicia o programa S-One
-			new Inicio();
-
+			//new Inicio();
+			LoginController.IniciarLogin();
+			
 		}
 		catch (ClassNotFoundException ex) {
 			java.util.logging.Logger.getLogger(MainSolid1.class.getName()).log(
@@ -40,8 +43,8 @@ public class MainSolid1 {
 			            java.util.logging.Level.SEVERE, null, ex);
 		}
 		
-		/*
 		
+		/*
 		File file = new File("conf/database.bin");
 		if(file.exists()){
 			System.out.println("Existe");

@@ -44,7 +44,7 @@ public class BancoDados {
 			Class.forName(driver);
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/solid_one", "root", "f1234567");
 			stmt = con.createStatement();
-			System.out.printf("Conexão com o Banco de Dados estabelecida com sucesso!", "Mensagem do Sistema", JOptionPane.PLAIN_MESSAGE);
+			//System.out.printf("Conexão com o Banco de Dados estabelecida com sucesso!", "Mensagem do Sistema", JOptionPane.PLAIN_MESSAGE);
 
 		} catch (Exception e) {
 			Toolkit.getDefaultToolkit().beep();

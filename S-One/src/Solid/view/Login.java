@@ -226,7 +226,8 @@ public class Login extends JFrame {
 		btEsqueceuSuaSenha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			
-				LoginController.Esqueci();				
+				LoginController.Esqueci();	
+				
 				//Login.this.setVisible(false);
 				//new UserSenha().setVisible(true);
 			}
