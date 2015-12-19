@@ -71,8 +71,8 @@ public class BancoDados {
 		try {
 			con.close();
 			Toolkit.getDefaultToolkit().beep();
-			JOptionPane.showMessageDialog(null," O BD foi desconectado com sucesso !", "Mensagem do Sistema",
-					JOptionPane.WARNING_MESSAGE);
+			//JOptionPane.showMessageDialog(null," O BD foi desconectado com sucesso !", "Mensagem do Sistema",
+			//		JOptionPane.WARNING_MESSAGE);
 
 		} catch (Exception e) {
 			Toolkit.getDefaultToolkit().beep();

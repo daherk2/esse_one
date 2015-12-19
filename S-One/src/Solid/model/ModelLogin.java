@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.swing.JOptionPane;
-@SuppressWarnings("unused")
+
 public class ModelLogin {
 	
 	private static String usuario;
@@ -19,15 +19,15 @@ public class ModelLogin {
 	static BancoDados x	= new BancoDados();
 	
 	public static String getUsuario() {
-		return Login.textUsuario.getText();
+		return Login.cusuario.getText();
 	}
 	public static void setUsuario(String usuario) {
-		 Login.textUsuario.setText(usuario);
+		 Login.cusuario.setText(usuario);
 	}
 	public static String getSenha() {
-		return   Login.passwordField.getText();
+		return   Login.csenha.getText();
 	}
 	public static void setSenha(String senha) {
-		 Login.passwordField.setText(senha);
+		 Login.csenha.setText(senha);
 	}	
 }

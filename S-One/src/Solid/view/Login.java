@@ -29,6 +29,7 @@ import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
+import Solid.controller.BancoDados;
 import Solid.controller.LoginController;
 import Solid.controller.Metodos;
 
@@ -48,8 +49,8 @@ public class Login extends JFrame {
 	// variaveis do sistema
 	
 	private JPanel			tabbedPaneLogin;
-	public static JTextField	textUsuario;
-	public static JTextField	passwordField;
+	public static JTextField	cusuario;
+	public static JTextField	csenha;
 	int					v			= 0;
 	public static String		ncont, bc, ag;
 	public static String		nclient;
@@ -112,28 +113,28 @@ public class Login extends JFrame {
 		setContentPane(tabbedPaneLogin);
 		tabbedPaneLogin.setLayout(null);
 		
-		textUsuario = new JTextField();
-		textUsuario.setForeground(Color.BLACK);
-		textUsuario.setCaretColor(Color.BLACK);
-		textUsuario.setBackground(UIManager.getColor("TextField.background"));
-		textUsuario.setSelectionColor(SystemColor.textHighlight);
-		textUsuario.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		textUsuario.setHorizontalAlignment(SwingConstants.CENTER);
-		textUsuario.setFont(new Font("Kalinga", Font.PLAIN, 16));
-		textUsuario.setBounds(380, 107, 256, 32);
-		tabbedPaneLogin.add(textUsuario);
-		textUsuario.setColumns(10);
+		cusuario = new JTextField();
+		cusuario.setForeground(Color.BLACK);
+		cusuario.setCaretColor(Color.BLACK);
+		cusuario.setBackground(UIManager.getColor("TextField.background"));
+		cusuario.setSelectionColor(SystemColor.textHighlight);
+		cusuario.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+		cusuario.setHorizontalAlignment(SwingConstants.CENTER);
+		cusuario.setFont(new Font("Kalinga", Font.PLAIN, 16));
+		cusuario.setBounds(380, 107, 256, 32);
+		tabbedPaneLogin.add(cusuario);
+		cusuario.setColumns(10);
 		
-		passwordField = new JPasswordField();
-		passwordField.setForeground(Color.BLACK);
-		passwordField.setCaretColor(Color.BLACK);
-		passwordField.setBackground(UIManager.getColor("TextField.background"));
-		passwordField.setSelectionColor(SystemColor.textHighlight);
-		passwordField.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
-		passwordField.setFont(new Font("Kalinga", Font.PLAIN, 16));
-		passwordField.setBounds(380, 184, 256, 32);
-		passwordField.addKeyListener(new KeyListener() {
+		csenha = new JPasswordField();
+		csenha.setForeground(Color.BLACK);
+		csenha.setCaretColor(Color.BLACK);
+		csenha.setBackground(UIManager.getColor("TextField.background"));
+		csenha.setSelectionColor(SystemColor.textHighlight);
+		csenha.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+		csenha.setHorizontalAlignment(SwingConstants.CENTER);
+		csenha.setFont(new Font("Kalinga", Font.PLAIN, 16));
+		csenha.setBounds(380, 184, 256, 32);
+		csenha.addKeyListener(new KeyListener() {
 			
 			@Override
 			public void keyTyped(KeyEvent arg0) {
@@ -153,11 +154,11 @@ public class Login extends JFrame {
 					JOptionPane.showMessageDialog(null, "CAPS LOCK ATIVADO!", "Atenção",
 							JOptionPane.INFORMATION_MESSAGE);
 					
-					passwordField.setText(null);
+					csenha.setText(null);
 				}
 			}
 		});
-		tabbedPaneLogin.add(passwordField);
+		tabbedPaneLogin.add(csenha);
 		
 		btSair = new JButton("Sair");
 		btSair.setToolTipText("alt + End");
@@ -191,12 +192,12 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent evt) {				
 				LoginController.verificarSenha();				
 				if (LoginController.janela == true){
-					User = textUsuario.getText().toString();
+					User = cusuario.getText().toString();
 					Login.this.dispose();
 				}
 			}
 		});
-		passwordField.setVisible(true);
+		csenha.setVisible(true);
 		
 		textSenha = new JTextField();
 		textSenha.setSelectionColor(SystemColor.textHighlight);
@@ -224,9 +225,10 @@ public class Login extends JFrame {
 		btEsqueceuSuaSenha.setFont(new Font("Kalinga", Font.PLAIN, 14));
 		btEsqueceuSuaSenha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				Login.this.setVisible(false);
-				new UserSenha().setVisible(true);
+			
+				LoginController.Esqueci();				
+				//Login.this.setVisible(false);
+				//new UserSenha().setVisible(true);
 			}
 		});
 		btEsqueceuSuaSenha.setBounds(380, 315, 256, 40);
@@ -243,8 +245,8 @@ public class Login extends JFrame {
 		btnVisualizarSenha.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				String senha = passwordField.getText();
-				passwordField.setVisible(false);
+				String senha = csenha.getText();
+				csenha.setVisible(false);
 				textSenha.setVisible(true);
 				textSenha.setText(senha);
 				
@@ -255,7 +257,7 @@ public class Login extends JFrame {
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				passwordField.setVisible(true);
+				csenha.setVisible(true);
 				textSenha.setVisible(false);
 				
 				labelIconeSenha.setIcon(new ImageIcon(Login.class

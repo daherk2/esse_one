@@ -4,7 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 import Solid.model.ModelLogin;
 import Solid.view.*;
@@ -65,20 +67,60 @@ public class LoginController {
 			} else {
 				JOptionPane.showMessageDialog(null, "Usuario e/ou Senha incorretos!!", "Atenção",
 						JOptionPane.WARNING_MESSAGE);
-				Login.textUsuario.requestFocus();
-				Login.textUsuario.setText(null);
-				Login.passwordField.setText(null);
+				Login.cusuario.requestFocus();
+				Login.cusuario.setText(null);
+				Login.csenha.setText(null);
 				janela=false;
 			}
 
 		} catch (SQLException erro) {
 			JOptionPane.showMessageDialog(null, "Usuario e/ou Senha incorretos!!", "Atenção",
 					JOptionPane.WARNING_MESSAGE);
-			Login.textUsuario.requestFocus();
-			Login.textUsuario.setText(null);
-			Login.passwordField.setText(null);
+			Login.cusuario.requestFocus();
+			Login.cusuario.setText(null);
+			Login.csenha.setText(null);
 			
 		}
+		
+	}
+
+
+
+	public static void Esqueci(){
+		
+		String user = Login.cusuario.getText();
+				
+		BancoDados su = new BancoDados();
+		su.conecta();
+		String novasenha = "ontem";
+		String sql = "Update login1 set senha = '"+novasenha+"' WHERE usuario = '"+user+"';";
+		System.out.println(sql);
+		su.grava(sql);
+		//su.desconecta();
+		
+		BancoDados as = new BancoDados();
+		as.conecta();
+		String email = "";
+		String comandosql = "SELECT * FROM login1 where usuario = '"+user+"'";
+		ResultSet rest = as.Consultar(comandosql);
+		try{
+			rest.beforeFirst();
+			while(rest.next()){
+			//String var[] = rest.getString("referente").split(",");
+			email = rest.getString("email");	
+			}
+			//as.desconecta();
+		}catch(SQLException ert){}	
+		
+		MailSender ms = new MailSender();
+		ms.enviar(email, user, "Recuparação de Senha",
+				"<html><br>Prezado "+user+""+",</br>"+
+				"<br>Sua senha foi alterada para: "+novasenha+" .</br>"+
+				"<br> </br>"+
+				"<br>Atenciosamente</br>,<br> Equipe SOLID - Software and Consulting</br>"+
+				"</html>");
+		
+		
 		
 	}
 	
