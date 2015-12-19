@@ -1,10 +1,15 @@
 package Solid.controller;
 import java.awt.Toolkit;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
@@ -16,15 +21,60 @@ public class BancoDados {
 	static Connection			con;									// conexão
 	static Statement			stmt;									// Gravar
 	static ResultSet			rs;										// Consulta
-	static String				url		= "jdbc:mysql://localhost:3306/solid_one";	// banco
+	static String				url	;//	= "jdbc:mysql://localhost:3306/solid_one";	// banco
 																	// de
 																	// dados
-	static String				user		= "root";						// usuario
-	static String				password	= "";							// senha
-	static String				driver	= "com.mysql.jdbc.Driver";			//
+	static String				user;//		= "root";						// usuario
+	static String				password;//	= "";							// senha
+	static String				driver;//	= "com.mysql.jdbc.Driver";			//
 
 	public static JRadioButton	onoff;
 
+	public BancoDados() {
+		
+		ArrayList<String> var = new ArrayList<String>();
+		
+		try{
+		
+		BufferedReader br = new BufferedReader(new FileReader("conf/database.bin"));
+		try {
+		    String line = br.readLine();
+		    //System.out.println(line);
+		    while (line != null) {
+		    	line = br.readLine();
+		    	var.add(line);
+		    	//System.out.println(line);
+		        
+		    }
+		    //System.out.println(var);
+		} catch (IOException e) {
+			
+		} finally {
+		    try {
+				br.close();
+			} catch (IOException e) {}
+		}
+		
+		
+		}catch(FileNotFoundException er){}
+		
+		
+		driver = var.get(0);
+		url = var.get(1)+":"+var.get(3)+"/"+var.get(2);
+		user = var.get(4);
+		password = var.get(5);
+		
+		/*
+		System.out.println(driver);
+		System.out.println(url);
+		System.out.println(user);
+		System.out.println(password);
+		*/
+		
+		
+	}
+	
+	
 	public static void conecta() {
 
 		try { // here you can put the selected theme class name in JTattoo
@@ -42,7 +92,7 @@ public class BancoDados {
 
 		try {
 			Class.forName(driver);
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/solid_one", "root", "f1234567");
+			con = DriverManager.getConnection(url, user, password);
 			stmt = con.createStatement();
 			//System.out.printf("Conexão com o Banco de Dados estabelecida com sucesso!", "Mensagem do Sistema", JOptionPane.PLAIN_MESSAGE);
 
